@@ -1,5 +1,47 @@
+# Define the Python project metadata used by Vercel and Python packaging.
 [project]
+
+# Define the name of the AAMAC Church Website project.
 name = "aamac-church-website"
+
+# Define the current application version.
 version = "1.0.0"
+
+# Provide a short description of the application.
 description = "Adeyinka Adegbite Memorial Anglican Church website and administration system"
+
+# Tell Vercel to use Python 3.14 for this application.
 requires-python = ">=3.14,<3.15"
+
+# Define every Python package required by the application.
+dependencies = [
+    # FastAPI provides the web framework.
+    "fastapi==0.116.1",
+
+    # Uvicorn runs the FastAPI application.
+    "uvicorn[standard]==0.35.0",
+
+    # SQLAlchemy provides database models and database access.
+    "SQLAlchemy==2.0.43",
+
+    # Jinja2 renders the church website templates.
+    "Jinja2==3.1.6",
+
+    # Enables HTML form and file-upload handling.
+    "python-multipart==0.0.20",
+
+    # Provides secure session signing.
+    "itsdangerous==2.2.0",
+
+    # Provides password hashing support.
+    "passlib[bcrypt]==1.7.4",
+
+    # Provides the bcrypt hashing implementation.
+    "bcrypt==4.3.0",
+
+    # Provides PostgreSQL connectivity for Neon.
+    "psycopg[binary]==3.3.6",
+
+    # Loads configuration from environment variables.
+    "pydantic-settings==2.10.1"
+]
