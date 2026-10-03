@@ -1,0 +1,5 @@
+[project]
+name = "aamac-church-website"
+version = "1.0.0"
+description = "Adeyinka Adegbite Memorial Anglican Church website and administration system"
+requires-python = ">=3.14,<3.15"

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Contact AAMAC{% endblock %}
+{% block content %}
+<section class="inner-signature-hero inner-hero-short">
+  <div class="inner-hero-art church-hero-art"></div><div class="inner-hero-overlay"></div>
+  <div class="container position-relative"><div class="inner-hero-grid"><div class="inner-hero-copy"><span class="section-label light-label">CONTACT AAMAC</span><h1>We would be glad to <em>hear from you.</em></h1><p>Reach the church by telephone, email or the AAMAC Facebook community.</p></div><div class="inner-hero-card glass-card-strong"><span class="eyebrow">VISIT</span><strong>Dugbe, Ibadan.</strong><p>{{ po_box }}</p><a class="gold-button w-100" href="tel:{{ phone }}">Call {{ phone }} <i class="bi bi-telephone"></i></a></div></div></div>
+</section>
+<section class="signature-section pt-5"><div class="container"><div class="row g-4">
+<div class="col-lg-7"><div class="contact-editorial-card"><span class="section-label">GET IN TOUCH</span><h2>Let's <em>connect.</em></h2><p class="section-lead">For worship information, church enquiries, notices and other official communication, use the details below.</p><div class="contact-grid mt-4"><a href="tel:{{ phone }}" class="contact-tile neumorph-card"><span><i class="bi bi-telephone"></i></span><div><small>TELEPHONE</small><strong>{{ phone }}</strong></div></a><a href="mailto:{{ email }}" class="contact-tile neumorph-card"><span><i class="bi bi-envelope"></i></span><div><small>EMAIL</small><strong>{{ email }}</strong></div></a><div class="contact-tile neumorph-card"><span><i class="bi bi-geo-alt"></i></span><div><small>ADDRESS</small><strong>{{ po_box }}</strong></div></div><a href="{{ facebook }}" target="_blank" rel="noopener" class="contact-tile neumorph-card"><span><i class="bi bi-facebook"></i></span><div><small>FACEBOOK</small><strong>AAMAC Facebook Community</strong></div></a></div></div></div>
+<div class="col-lg-5"><div class="location-card"><div class="location-art community-art"></div><div class="location-overlay"></div><div class="location-copy"><span class="eyebrow">OUR LOCATION</span><h3>Dugbe, Ibadan</h3><p>{{ po_box }}</p><span class="location-note"><i class="bi bi-info-circle"></i> Exact street/map details can be added when supplied by the church.</span></div></div></div>
+</div></div></section>
+{% endblock %}

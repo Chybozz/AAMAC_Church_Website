@@ -1,0 +1,95 @@
+<!-- Define the HTML5 document. -->
+<!doctype html>
+<!-- Declare the page language. -->
+<html lang="en">
+<head>
+    <!-- Support Unicode text. -->
+    <meta charset="utf-8">
+    <!-- Make the layout responsive on every screen. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Set the page title. -->
+    <title>{% block title %}AAMAC | Adeyinka Adegbite Memorial Anglican Church{% endblock %}</title>
+    <!-- Load Bootstrap for responsive layout utilities. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Load Bootstrap Icons for lightweight interface icons. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Load refined editorial typography. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Load the AAMAC signature visual system. -->
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+    <!-- Allow individual pages to add head content. -->
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Add subtle ambient colour fields behind the page. -->
+    <div class="ambient ambient-gold"></div>
+    <div class="ambient ambient-teal"></div>
+
+    <!-- Build the floating navigation inspired by the supplied premium reference. -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-xl signature-nav">
+            <div class="container-fluid px-3 px-lg-4">
+                <!-- Keep the AAMAC identity prominent. -->
+                <a class="navbar-brand signature-brand" href="/">
+                    <span class="brand-emblem"><i class="bi bi-cross"></i></span>
+                    <span class="brand-name"><strong>AAMAC</strong><small>Adeyinka Adegbite Memorial</small></span>
+                </a>
+                <!-- Provide the mobile navigation trigger. -->
+                <button class="navbar-toggler nav-round" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Open navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+                <!-- Keep the main navigation intentionally short. -->
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto align-items-xl-center signature-links">
+                        <li class="nav-item"><a class="nav-link nav-active" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">Our Church</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#worship">Worship</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#notices">Notices</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#contact">Visit</a></li>
+                    </ul>
+                    <!-- Put secondary actions into tactile circular controls. -->
+                    <div class="nav-tools mt-3 mt-xl-0">
+                        <a class="nav-round" href="{{ facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a class="nav-round" href="mailto:{{ email }}" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                        <a class="nav-admin" href="/admin/login"><i class="bi bi-person-lock"></i><span>Admin</span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Render the current page. -->
+    <main>{% block content %}{% endblock %}</main>
+
+    <!-- Build a calm editorial footer. -->
+    <footer class="signature-footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="signature-brand footer-brand-lockup">
+                        <span class="brand-emblem"><i class="bi bi-cross"></i></span>
+                        <span class="brand-name"><strong>AAMAC</strong><small>Adeyinka Adegbite Memorial Anglican Church</small></span>
+                    </div>
+                    <p>A welcoming Anglican community in the Diocese of Ibadan South, gathered in worship, fellowship, discipleship and service.</p>
+                    <div class="footer-socials">
+                        <a href="{{ facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="mailto:{{ email }}" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                        <a href="tel:{{ phone }}" aria-label="Phone"><i class="bi bi-telephone"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column"><span>Explore</span><a href="/">Home</a><a href="/about">Our Church</a><a href="/#worship">Worship</a><a href="/#notices">Notices</a></div>
+                <div class="footer-column"><span>Church</span><a href="/theme">Annual Theme</a><a href="/leadership">Leadership</a><a href="/family-groups">Family Groups</a><a href="/contact">Contact</a></div>
+                <div class="footer-column"><span>Visit AAMAC</span><p>{{ po_box }}</p><p>{{ phone }}</p><p>{{ email }}</p></div>
+            </div>
+            <div class="footer-bottom"><span>© {{ theme.year if theme else 2026 }} AAMAC. All rights reserved.</span><span>Diocese of Ibadan South · Anglican Communion</span></div>
+        </div>
+    </footer>
+
+    <!-- Load Bootstrap interactions. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Load the small site interaction layer. -->
+    <script src="{{ url_for('static', path='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Notices & Announcements | AAMAC{% endblock %}
+{% block content %}
+<section class="inner-signature-hero inner-hero-short">
+  <div class="inner-hero-art community-art"></div><div class="inner-hero-overlay"></div>
+  <div class="container position-relative"><div class="inner-hero-grid"><div class="inner-hero-copy"><span class="section-label light-label">AAMAC NOTICE BOARD</span><h1>What is happening <em>at church.</em></h1><p>Announcements, events and important information published by the church administration.</p></div><div class="inner-hero-card glass-card-strong"><span class="eyebrow">STAY CONNECTED</span><strong>Never miss a church update.</strong><p>Published notices appear here automatically as the administrator updates them.</p><a class="light-button w-100" href="/contact">Contact the church</a></div></div></div>
+</section>
+<section class="signature-section pt-5"><div class="container"><div class="section-heading-row"><div><span class="section-label">LATEST</span><h2>Church <em>notices.</em></h2></div><span class="small-muted">Updated from the AAMAC admin portal</span></div><div class="row g-4 mt-2">{% for notice in notices %}<div class="col-md-6 col-xl-4"><article class="notice-editorial neumorph-card"><div class="notice-top"><span class="notice-symbol"><i class="bi bi-megaphone"></i></span><small>{{ notice.created_at.strftime('%d %b %Y') }}</small></div><h3>{{ notice.title }}</h3><p>{{ notice.content }}</p>{% if notice.link_url %}<a class="editorial-link" href="{{ notice.link_url }}" target="_blank" rel="noopener">{{ notice.link_label or 'Read more' }} <i class="bi bi-arrow-up-right"></i></a>{% endif %}</article></div>{% else %}<div class="col-12"><div class="empty-editorial"><span class="quick-icon"><i class="bi bi-bell"></i></span><h3>No announcements yet.</h3><p>The latest church notices will appear here when published.</p></div></div>{% endfor %}</div></div></section>
+{% endblock %}

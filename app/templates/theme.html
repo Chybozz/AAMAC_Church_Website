@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Annual Theme | AAMAC{% endblock %}
+{% block content %}
+<section class="inner-signature-hero theme-hero">
+  <div class="inner-hero-art church-hero-art"></div><div class="inner-hero-overlay"></div>
+  <div class="container position-relative"><div class="inner-hero-grid"><div class="inner-hero-copy"><span class="section-label light-label">ANNUAL CHURCH THEME</span><h1>Our year of <em>great things.</em></h1><p>The annual theme gives the church a shared focus for worship, teaching, prayer and fellowship.</p></div>{% if theme %}<div class="inner-hero-card glass-card-strong theme-mini-card"><span class="eyebrow">{{ theme.year }} · AAMAC</span><div class="mini-theme-word">{{ theme.title }}</div><strong>{{ theme.subtitle }}</strong><div class="mini-rule"></div><span>{{ theme.bible_reference }}</span></div>{% endif %}</div></div>
+</section>
+<section class="signature-section pt-5"><div class="container">{% if theme %}<div class="theme-page-card"><div class="theme-page-word">{{ theme.title }}</div><div class="row g-5 align-items-end"><div class="col-lg-7"><span class="section-label">{{ theme.year }} ANNUAL FOCUS</span><h2>{{ theme.subtitle }}</h2><p class="section-lead">{{ theme.description or 'A shared expression of faith, gratitude and expectation for the year ahead.' }}</p></div><div class="col-lg-5"><div class="scripture-panel scripture-light"><span>SCRIPTURE REFERENCE</span><strong>{{ theme.bible_reference }}</strong><p>Keep this theme before the church throughout the year.</p></div></div></div></div>{% else %}<div class="empty-editorial"><h3>No annual theme published yet.</h3><p>The church administrator can add the current theme from the admin portal.</p></div>{% endif %}</div></section>
+{% endblock %}

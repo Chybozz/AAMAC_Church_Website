@@ -1,0 +1,23 @@
+# Run this service as the Linux user that owns the AAMAC project.
+[Unit]
+# Start the AAMAC application after the network is available.
+Description=AAMAC FastAPI Church Website
+After=network.target
+
+[Service]
+# Set the Linux account used to run the application.
+User=www-data
+# Set the Linux group used to run the application.
+Group=www-data
+# Point systemd to the deployed project directory.
+WorkingDirectory=/var/www/aamac
+# Start Gunicorn with the included production configuration.
+ExecStart=/var/www/aamac/venv/bin/gunicorn -c /var/www/aamac/gunicorn.conf.py run:application
+# Restart the service automatically if the process exits unexpectedly.
+Restart=always
+# Give the application its own production environment file.
+EnvironmentFile=/var/www/aamac/.env
+
+[Install]
+# Start the service automatically during normal multi-user boot.
+WantedBy=multi-user.target

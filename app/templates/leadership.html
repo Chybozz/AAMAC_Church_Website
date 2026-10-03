@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Leadership | AAMAC{% endblock %}
+{% block content %}
+<section class="inner-signature-hero inner-hero-short">
+  <div class="inner-hero-art community-art"></div><div class="inner-hero-overlay"></div>
+  <div class="container position-relative"><div class="inner-hero-grid"><div class="inner-hero-copy"><span class="section-label light-label">CHURCH LEADERSHIP</span><h1>Those who <em>serve.</em></h1><p>Meet the church leadership information currently published by AAMAC.</p></div><div class="inner-hero-card glass-card-strong"><span class="eyebrow">LEADERSHIP</span><strong>Grace in service.</strong><p>Official names, titles and bios can be updated by the church administrator.</p></div></div></div>
+</section>
+<section class="signature-section pt-5"><div class="container"><div class="section-heading-row"><div><span class="section-label">SERVING THE CHURCH</span><h2>Our <em>leaders.</em></h2></div></div><div class="row g-4 mt-2">{% for leader in leaders %}<div class="col-md-6 col-xl-4"><article class="leader-profile neumorph-card"><div class="leader-profile-top"><div class="leader-avatar leader-avatar-large"><i class="bi bi-person-heart"></i></div><span class="leader-index">{{ "%02d"|format(loop.index) }}</span></div><span class="eyebrow">{{ leader.title }}</span><h3>{{ leader.name }}</h3><p>{{ leader.bio }}</p><div class="profile-line"></div><small>Leadership profile · AAMAC</small></article></div>{% else %}<div class="col-12"><div class="empty-editorial"><h3>Leadership information will be published here.</h3><p>The administrator can add official names and profiles.</p></div></div>{% endfor %}</div></div></section>
+{% endblock %}

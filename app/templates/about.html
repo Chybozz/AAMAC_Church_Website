@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Our Church | AAMAC{% endblock %}
+{% block content %}
+<section class="inner-signature-hero">
+  <div class="inner-hero-art community-art"></div>
+  <div class="inner-hero-overlay"></div>
+  <div class="container position-relative">
+    <div class="inner-hero-grid">
+      <div class="inner-hero-copy">
+        <span class="section-label light-label">OUR CHURCH</span>
+        <h1>A church to <em>belong</em> to.</h1>
+        <p>Adeyinka Adegbite Memorial Anglican Church is a worshipping community in the Diocese of Ibadan South, gathered around Christ, fellowship, discipleship and service.</p>
+        <div class="hero-actions"><a class="gold-button" href="/#contact">Plan a visit <i class="bi bi-arrow-right"></i></a><a class="light-button" href="/services">See worship times</a></div>
+      </div>
+      <div class="inner-hero-card glass-card-strong">
+        <span class="eyebrow">AAMAC</span><strong>Worship.</strong><strong>Fellowship.</strong><strong>Service.</strong>
+        <p>Faith is lived together. Discover the people and rhythms that make our church family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="signature-section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6"><div class="editorial-art community-art large-art"><span class="art-badge">COMMUNITY &amp; FELLOWSHIP</span><span class="art-caption">A welcoming place for every generation</span></div></div>
+      <div class="col-lg-6">
+        <span class="section-label">WHO WE ARE</span><h2>Faith that feels <em>like home.</em></h2>
+        <p class="section-lead">AAMAC is part of the Anglican Communion through the Diocese of Ibadan South. Our public website is designed to help members and visitors find the church's worship schedule, notices, annual theme, leadership and family fellowship information in one welcoming place.</p>
+        <div class="promise-grid"><div><span>01</span><strong>Worship</strong><p>Gathering around Scripture, prayer, hymns, sermon and Holy Communion.</p></div><div><span>02</span><strong>Community</strong><p>Growing through family groups, care and meaningful fellowship.</p></div><div><span>03</span><strong>Service</strong><p>Living out faith through practical love and service.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="theme-band">
+  <div class="container"><div class="theme-campaign compact-campaign"><div class="campaign-light"></div><div class="row align-items-center g-4 position-relative"><div class="col-lg-8"><span class="section-label light-label">OUR YEAR</span><div class="campaign-title">MEGALEIOS</div><div class="campaign-subtitle">OUR YEAR OF GREAT THINGS</div><p>A year of celebrating God's great works and His faithfulness to His people.</p></div><div class="col-lg-4"><div class="scripture-panel"><span>SCRIPTURE</span><strong>Luke 1:49</strong><p>Our annual theme is managed by the church administrator and displayed throughout the website.</p></div></div></div></div></div>
+</section>
+
+<section class="signature-section pt-0" id="leadership">
+  <div class="container"><div class="section-heading-row"><div><span class="section-label">LEADERSHIP</span><h2>Those who <em>serve.</em></h2></div><a class="editorial-link" href="/leadership">View leadership <i class="bi bi-arrow-up-right"></i></a></div>
+    <div class="row g-4 mt-2">{% for leader in leaders %}<div class="col-md-6 col-xl-4"><article class="leader-premium neumorph-card"><div class="leader-avatar"><i class="bi bi-person-heart"></i></div><span class="eyebrow">{{ leader.title }}</span><h3>{{ leader.name }}</h3><p>{{ leader.bio }}</p></article></div>{% else %}<div class="col-12"><div class="soft-panel">Leadership information will be published by the church administrator.</div></div>{% endfor %}</div>
+  </div>
+</section>
+
+<section class="signature-section pt-0" id="families">
+  <div class="container"><div class="section-heading-row"><div><span class="section-label">FELLOWSHIP</span><h2>Find your <em>people.</em></h2></div><a class="editorial-link" href="/family-groups">View family groups <i class="bi bi-arrow-up-right"></i></a></div>
+    <div class="family-grid family-grid-large mt-3">{% for group in groups %}<div class="family-premium neumorph-card"><span>{{ "%02d"|format(loop.index) }}</span><div><strong>{{ group.name }}</strong><small>{{ group.leader_name }}</small></div><i class="bi bi-arrow-up-right"></i></div>{% else %}<div class="soft-panel">Family group information will be published here.</div>{% endfor %}</div>
+  </div>
+</section>
+{% endblock %}

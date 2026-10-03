@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d7edf0"/><stop offset=".58" stop-color="#f4ead7"/><stop offset="1" stop-color="#d5e2d8"/></linearGradient>
+ <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4d38b" stop-opacity=".95"/><stop offset="1" stop-color="#f7ead0" stop-opacity="0"/></linearGradient>
+ <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffaf0"/><stop offset="1" stop-color="#d9d0bd"/></linearGradient>
+ <linearGradient id="roof" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1c4657"/><stop offset="1" stop-color="#0b283d"/></linearGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<circle cx="1280" cy="190" r="180" fill="url(#sun)" filter="url(#blur)"/>
+<path d="M0 610 C220 540 330 560 520 640 S890 740 1120 610 S1430 530 1600 610 V900 H0Z" fill="#b8cdbd"/>
+<path d="M0 700 C250 625 410 660 650 735 S1100 770 1600 650 V900 H0Z" fill="#91ad9b"/>
+<g transform="translate(760 185)">
+ <path d="M30 355 L210 150 L390 355Z" fill="url(#roof)"/>
+ <rect x="70" y="345" width="280" height="250" rx="4" fill="url(#wall)"/>
+ <rect x="190" y="75" width="42" height="190" fill="#f8f1df"/>
+ <path d="M150 140 L211 75 L272 140Z" fill="#173d4f"/>
+ <rect x="201" y="110" width="20" height="100" fill="#d2a052"/>
+ <rect x="155" y="405" width="55" height="190" rx="28" fill="#173d4f"/>
+ <rect x="238" y="405" width="55" height="190" rx="28" fill="#173d4f"/>
+ <circle cx="182" cy="320" r="28" fill="#2a8c87"/><circle cx="264" cy="320" r="28" fill="#2a8c87"/>
+ <rect x="40" y="555" width="340" height="32" rx="16" fill="#c39a53" opacity=".7"/>
+</g>
+<g opacity=".85"><circle cx="560" cy="665" r="38" fill="#15374b"/><path d="M520 790 Q560 680 600 790Z" fill="#173e53"/><circle cx="655" cy="675" r="34" fill="#2d706e"/><path d="M620 795 Q655 690 690 795Z" fill="#245f61"/><circle cx="1320" cy="675" r="36" fill="#8b6c47"/><path d="M1280 795 Q1320 690 1360 795Z" fill="#315a60"/></g>
+<path d="M0 835 Q400 790 800 835 T1600 835 V900 H0Z" fill="#f7f0df" opacity=".8"/>
+</svg>

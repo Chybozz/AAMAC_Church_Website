@@ -1,0 +1,20 @@
+# FastAPI provides the web framework and API functionality.
+fastapi==0.116.1
+# Uvicorn runs the FastAPI application in development and production behind a reverse proxy.
+uvicorn[standard]==0.35.0
+# SQLAlchemy provides database models and database access.
+SQLAlchemy==2.0.43
+# Jinja2 renders the server-side HTML templates.
+Jinja2==3.1.6
+# python-multipart enables HTML form and file-upload handling.
+python-multipart==0.0.20
+# itsdangerous signs session data securely for the admin login cookie.
+itsdangerous==2.2.0
+# passlib and bcrypt provide secure password hashing for the administrator account.
+passlib[bcrypt]==1.7.4
+# Pin bcrypt to a Passlib-compatible version for the application password hashing layer.
+bcrypt==4.3.0
+# psycopg enables PostgreSQL deployment when DATABASE_URL uses PostgreSQL.
+psycopg[binary]==3.3.6
+# pydantic-settings loads production configuration from environment variables.
+pydantic-settings==2.10.1

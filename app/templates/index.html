@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block title %}AAMAC | Welcome Home{% endblock %}
+{% block content %}
+<!-- Create the large visual opening inspired by the reference's cinematic first screen. -->
+<section class="signature-hero">
+    <div class="hero-art"></div>
+    <div class="hero-shade"></div>
+    <div class="container position-relative hero-inner">
+        <div class="row align-items-center g-4">
+            <div class="col-xl-7 col-lg-7">
+                <div class="hero-copy-panel">
+                    <span class="hero-kicker"><i class="bi bi-stars"></i> Diocese of Ibadan South · Anglican Communion</span>
+                    <h1>Come as you are.<br><em>Grow in grace.</em></h1>
+                    <p>Welcome to Adeyinka Adegbite Memorial Anglican Church — a place to worship, belong, serve and grow together in Christ.</p>
+                    <div class="hero-actions">
+                        <a href="#worship" class="gold-button">Worship With Us <i class="bi bi-arrow-up-right"></i></a>
+                        <a href="/about" class="light-button">Discover AAMAC</a>
+                    </div>
+                    <div class="hero-trust-row">
+                        <span><i class="bi bi-check-circle-fill"></i> Christ-centred</span>
+                        <span><i class="bi bi-check-circle-fill"></i> Family-focused</span>
+                        <span><i class="bi bi-check-circle-fill"></i> Community-minded</span>
+                    </div>
+                </div>
+            </div>
+            {% if theme %}
+            <div class="col-xl-4 offset-xl-1 col-lg-5">
+                <!-- Keep the theme card glassy but never blur the text itself. -->
+                <div class="hero-theme-card">
+                    <div class="theme-card-top"><span>{{ theme.year }} ANNUAL THEME</span><span class="theme-icon"><i class="bi bi-cross"></i></span></div>
+                    <div class="theme-big-word">{{ theme.title }}</div>
+                    <div class="theme-rule"></div>
+                    <div class="theme-subtitle">{{ theme.subtitle }}</div>
+                    <div class="theme-scripture"><span>Scripture</span><strong>{{ theme.bible_reference }}</strong></div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="hero-scroll"><span>Explore AAMAC</span><i class="bi bi-arrow-down"></i></div>
+    </div>
+</section>
+
+<!-- Create the reference-style floating category strip, translated into church actions. -->
+<section class="quick-strip-wrap">
+    <div class="container">
+        <div class="quick-strip">
+            <a href="#worship" class="quick-tile"><span><i class="bi bi-calendar-heart"></i></span><strong>Worship</strong><small>Sunday services</small></a>
+            <a href="#theme" class="quick-tile"><span><i class="bi bi-stars"></i></span><strong>Our Theme</strong><small>{{ theme.year if theme else 'This year' }}</small></a>
+            <a href="#notices" class="quick-tile"><span><i class="bi bi-megaphone"></i></span><strong>Notices</strong><small>Church updates</small></a>
+            <a href="/about#leadership" class="quick-tile"><span><i class="bi bi-people"></i></span><strong>Leadership</strong><small>Our shepherds</small></a>
+            <a href="/about#families" class="quick-tile"><span><i class="bi bi-house-heart"></i></span><strong>Families</strong><small>14 groups</small></a>
+            <a href="#contact" class="quick-tile"><span><i class="bi bi-geo-alt"></i></span><strong>Visit Us</strong><small>Dugbe, Ibadan</small></a>
+        </div>
+    </div>
+</section>
+
+<!-- Introduce the church through a strong editorial split rather than a generic card. -->
+<section class="signature-section welcome-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="editorial-art community-art"><span class="art-badge">A PLACE TO BELONG</span><span class="art-caption">Worship · Fellowship · Service</span></div>
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <span class="section-label">WELCOME HOME</span>
+                <h2>Faith that feels like <em>family.</em></h2>
+                <p class="section-lead">AAMAC is a church community where worship, Scripture, fellowship and service come together. Whether you are visiting for the first time or have been part of the family for years, there is a place for you here.</p>
+                <div class="promise-grid">
+                    <div><span>01</span><strong>Worship</strong><p>Gather around God's Word, prayer and Holy Communion.</p></div>
+                    <div><span>02</span><strong>Belong</strong><p>Build meaningful relationships through our church family.</p></div>
+                    <div><span>03</span><strong>Serve</strong><p>Use your gifts to bless people and our wider community.</p></div>
+                </div>
+                <a class="editorial-link" href="/about">Meet the AAMAC family <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Make the annual theme a premium campaign panel. -->
+{% if theme %}
+<section id="theme" class="theme-band">
+    <div class="container">
+        <div class="theme-campaign">
+            <div class="campaign-light"></div>
+            <div class="row align-items-center g-4 position-relative">
+                <div class="col-lg-8">
+                    <span class="section-label light-label">OUR {{ theme.year }} JOURNEY</span>
+                    <div class="campaign-title">{{ theme.title }}</div>
+                    <div class="campaign-subtitle">{{ theme.subtitle }}</div>
+                    <p>{{ theme.description }}</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="scripture-panel"><span>OUR SCRIPTURE</span><strong>{{ theme.bible_reference }}</strong><p>“Great things He has done.”</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Present worship with the reference's large-card / smaller-card rhythm. -->
+<section id="worship" class="signature-section worship-section">
+    <div class="container">
+        <div class="section-heading-row">
+            <div><span class="section-label">GATHER WITH US</span><h2>Worship <em>together.</em></h2></div>
+            <a class="editorial-link" href="/services">View worship details <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+        <div class="row g-4 mt-2">
+            <div class="col-lg-7">
+                <div class="large-worship-card">
+                    <div class="worship-art"></div>
+                    <div class="worship-card-copy"><span>EVERY SUNDAY</span><h3>A beautiful place to meet with God.</h3><p>Come with your family and friends for worship, Scripture, prayer, fellowship and Holy Communion.</p></div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="service-list">
+                    {% for service in services %}
+                    <article class="service-tile">
+                        <div class="service-time"><span>{{ service.day }}</span><strong>{{ service.time }}</strong></div>
+                        <div><h3>{{ service.name }}</h3>{% if service.topic %}<p>{{ service.topic }}</p>{% endif %}{% if service.bible_reference %}<small><i class="bi bi-book"></i> {{ service.bible_reference }}</small>{% endif %}</div>
+                    </article>
+                    {% else %}
+                    <div class="soft-panel">Service information will appear here when published by the administrator.</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Present notices as a premium editorial news shelf. -->
+<section id="notices" class="signature-section notices-section">
+    <div class="container">
+        <div class="section-heading-row">
+            <div><span class="section-label">FROM THE CHURCH</span><h2>What's <em>happening.</em></h2></div>
+            <a class="editorial-link" href="/notices">See all notices <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+        <div class="row g-4 mt-2">
+            {% for notice in notices %}
+            <div class="col-md-4"><article class="notice-tile"><div class="notice-top"><span class="notice-symbol"><i class="bi bi-megaphone"></i></span><small>{{ notice.created_at.strftime('%d %b %Y') }}</small></div><h3>{{ notice.title }}</h3><p>{{ notice.content }}</p>{% if notice.link_url %}<a href="{{ notice.link_url }}" target="_blank" rel="noopener" class="editorial-link">{{ notice.link_label or 'Read more' }} <i class="bi bi-arrow-up-right"></i></a>{% endif %}</article></div>
+            {% else %}<div class="col-12"><div class="soft-panel">No public notices have been published yet.</div></div>{% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Finish with a large invitation panel rather than an ordinary contact card. -->
+<section id="contact" class="signature-section contact-section">
+    <div class="container">
+        <div class="visit-banner">
+            <div><span class="section-label">YOU ARE WELCOME HERE</span><h2>Come worship with <em>us.</em></h2><p>{{ po_box }} · {{ phone }} · {{ email }}</p></div>
+            <a class="gold-button" href="/contact">Plan Your Visit <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+    </div>
+</section>
+{% endblock %}

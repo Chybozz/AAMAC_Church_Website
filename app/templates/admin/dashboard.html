@@ -1,0 +1,21 @@
+{% extends "admin/base.html" %}
+{% block title %}AAMAC Content Studio{% endblock %}
+{% block content %}
+<div class="admin-topbar"><div><span class="section-label">AAMAC CONTENT STUDIO</span><h1>Keep the church website <em>alive.</em></h1><p>Update what members and visitors see without touching code.</p></div><a href="/" target="_blank" class="gold-button"><i class="bi bi-eye"></i> Preview website</a></div>
+<div class="admin-stat-grid">
+  <div class="admin-stat-card"><span class="stat-icon"><i class="bi bi-megaphone"></i></span><div><strong>{{ notice_count }}</strong><small>Published notices</small></div></div>
+  <div class="admin-stat-card"><span class="stat-icon"><i class="bi bi-calendar-heart"></i></span><div><strong>{{ service_count }}</strong><small>Active services</small></div></div>
+  <div class="admin-stat-card"><span class="stat-icon"><i class="bi bi-person-hearts"></i></span><div><strong>{{ leader_count }}</strong><small>Visible leaders</small></div></div>
+  <div class="admin-stat-card"><span class="stat-icon"><i class="bi bi-people"></i></span><div><strong>{{ family_count }}</strong><small>Family groups</small></div></div>
+</div>
+<div class="admin-content-grid">
+  <section class="admin-panel admin-panel-large"><div class="panel-heading"><div><span class="eyebrow">QUICK ACTIONS</span><h2>Update what people see.</h2></div></div><div class="admin-action-grid">
+    <a class="admin-action-premium" href="/admin/notices"><span><i class="bi bi-megaphone"></i></span><div><strong>Publish a Notice</strong><small>Announcements, events and church updates.</small></div><i class="bi bi-arrow-up-right"></i></a>
+    <a class="admin-action-premium" href="/admin/services"><span><i class="bi bi-calendar-heart"></i></span><div><strong>Update Worship</strong><small>Sunday times, topics and Bible references.</small></div><i class="bi bi-arrow-up-right"></i></a>
+    <a class="admin-action-premium" href="/admin/theme"><span><i class="bi bi-stars"></i></span><div><strong>Change Annual Theme</strong><small>Keep the year's focus and Scripture current.</small></div><i class="bi bi-arrow-up-right"></i></a>
+    <a class="admin-action-premium" href="/admin/leaders"><span><i class="bi bi-person-hearts"></i></span><div><strong>Update Leadership</strong><small>Names, titles, bios and visibility.</small></div><i class="bi bi-arrow-up-right"></i></a>
+    <a class="admin-action-premium" href="/admin/family-groups"><span><i class="bi bi-people"></i></span><div><strong>Manage Family Groups</strong><small>Keep group names and leaders current.</small></div><i class="bi bi-arrow-up-right"></i></a>
+  </div></section>
+  <aside class="admin-side-card"><span class="eyebrow">EDITOR'S NOTE</span><h3>Simple. Visual. No code.</h3><p>Use this workspace to keep AAMAC's public information fresh. Every published change flows into the website automatically.</p><div class="admin-check"><i class="bi bi-check-circle-fill"></i><span>Database connected</span></div><div class="admin-check"><i class="bi bi-shield-check"></i><span>Protected admin session</span></div><a href="/" target="_blank" class="light-button w-100 mt-3">Open public website <i class="bi bi-arrow-up-right"></i></a></aside>
+</div>
+{% endblock %}

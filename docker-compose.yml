@@ -1,0 +1,15 @@
+# Define the local application services.
+services:
+  # Define the AAMAC web application.
+  web:
+    # Build the application image from the included Dockerfile.
+    build: .
+    # Load environment values from the local .env file.
+    env_file:
+      - .env
+    # Expose the application to localhost.
+    ports:
+      - "8000:8000"
+    # Persist the SQLite database when using the default database URL.
+    volumes:
+      - ./data:/app/data
