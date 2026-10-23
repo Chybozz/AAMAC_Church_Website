@@ -47,3 +47,74 @@
 @media(max-width:1199px){.inner-hero-grid{grid-template-columns:1fr .55fr}.family-grid-large{grid-template-columns:repeat(2,1fr)}.admin-stat-grid{grid-template-columns:repeat(2,1fr)}.admin-content-grid,.admin-editor-grid{grid-template-columns:1fr}.admin-sidebar{width:220px}.admin-main{margin-left:260px;padding:35px}.admin-login-grid{gap:3rem;padding:35px}}
 @media(max-width:991px){.inner-signature-hero{margin:0 12px}.inner-hero-grid{grid-template-columns:1fr}.inner-hero-card{justify-self:start}.contact-grid{grid-template-columns:1fr}.admin-sidebar{position:relative;left:auto;top:auto;bottom:auto;width:auto;margin:12px;border-radius:24px}.admin-nav{grid-template-columns:repeat(3,1fr)}.admin-logout-wrap{margin-top:1rem}.admin-main{margin-left:0;padding:25px}.admin-topbar{align-items:start;flex-direction:column}.admin-login-grid{grid-template-columns:1fr;max-width:620px}.admin-login-story{min-height:auto;gap:3rem}.admin-login-card{margin-bottom:2rem}}
 @media(max-width:767px){.inner-signature-hero{margin:0 6px;border-radius:0 0 28px 28px}.inner-hero-copy h1{font-size:3.4rem}.inner-hero-card{width:100%}.large-art{min-height:400px}.service-editorial-grid,.family-directory{grid-template-columns:1fr}.compact-campaign,.theme-page-card{padding:2rem}.theme-page-word{font-size:4.8rem}.family-grid-large{grid-template-columns:1fr}.visit-banner-rich{padding:1.8rem}.contact-grid{grid-template-columns:1fr}.location-card{min-height:430px}.admin-sidebar{padding:1rem}.admin-nav{grid-template-columns:repeat(2,1fr)}.admin-topbar h1{font-size:3rem}.admin-stat-grid{grid-template-columns:1fr 1fr}.admin-action-grid{grid-template-columns:1fr}.admin-record,.admin-profile,.admin-family{grid-template-columns:48px 1fr}.record-actions,.profile-actions{grid-column:2;justify-content:flex-start}.admin-login-grid{padding:22px}.admin-login-story h1{font-size:3.8rem}.admin-login-card{padding:1.5rem}.history-row{grid-template-columns:45px 1fr auto}.history-row>small{grid-column:2}.history-row>b{grid-column:3;grid-row:1/3}}
+
+
+
+/* =========================================================
+   AAMAC MOBILE HORIZONTAL OVERFLOW FIX
+   Prevents page content from extending beyond the viewport.
+   ========================================================= */
+
+/* Keep the page within the available screen width. */
+html {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+/* Prevent the main page from scrolling sideways. */
+body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+/* Ensure padding does not increase element widths. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent common layout containers from exceeding the screen. */
+.container,
+.container-fluid,
+main,
+section,
+header,
+footer {
+    max-width: 100%;
+}
+
+/* Keep images and videos within their parent containers. */
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* Allow long text and links to wrap instead of widening the page. */
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: anywhere;
+}
+
+/* Apply additional safeguards on smaller screens. */
+@media (max-width: 768px) {
+    .container,
+    .container-fluid {
+        width: 100%;
+    }
+
+    /* Prevent oversized cards from creating horizontal scrolling. */
+    .card,
+    .glass-card,
+    .glass-panel {
+        max-width: 100%;
+        min-width: 0;
+    }
+}
